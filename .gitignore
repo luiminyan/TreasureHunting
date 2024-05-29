@@ -23,7 +23,7 @@ bin/
 /.nb-gradle/
 
 ### User specific files ###
-.idea/vcs.xml
+.idea/
 
 ### VS Code ###
 .vscode/
