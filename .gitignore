@@ -24,6 +24,7 @@ bin/
 
 ### IDEA ###
 .idea/
+TreasureHuntingGame.iml
 
 ### VS Code ###
 .vscode/
