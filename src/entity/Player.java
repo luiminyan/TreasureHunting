@@ -87,6 +87,6 @@ public class Player extends Entity{
                 bufferedImage = right1;
                 break;
         }
-        g2.drawImage(bufferedImage, x, y, null);
+        g2.drawImage(bufferedImage.getScaledInstance(gamePanel.tileSize, gamePanel.tileSize, 0), x, y, null);
     }
 }
