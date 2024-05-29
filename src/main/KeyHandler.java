@@ -18,22 +18,22 @@ public class KeyHandler implements KeyListener {
         // if W key is pressed
         if (code == KeyEvent.VK_W || code == KeyEvent.VK_UP) {
             upPressed = true;
-            System.out.println("W / UP key pressed!");
+//            System.out.println("W / UP key pressed!");
         }
 
         if (code == KeyEvent.VK_S || code == KeyEvent.VK_DOWN) {
             downPressed = true;
-            System.out.println("S / DOWN key pressed!");
+//            System.out.println("S / DOWN key pressed!");
         }
 
         if (code == KeyEvent.VK_A || code == KeyEvent.VK_LEFT) {
             leftPressed = true;
-            System.out.println("A / LEFT key pressed!");
+//            System.out.println("A / LEFT key pressed!");
         }
 
         if (code == KeyEvent.VK_D || code == KeyEvent.VK_RIGHT) {
             rightPressed = true;
-            System.out.println("D / RIGHT key pressed!");
+//            System.out.println("D / RIGHT key pressed!");
         }
     }
 
