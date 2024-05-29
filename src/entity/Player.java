@@ -68,23 +68,55 @@ public class Player extends Entity{
             System.out.println("Player moved downwards!");
         }
 
+        // each time update is called, spriteCounter increases
+        spriteCounter ++;
+        if (spriteCounter > 10) {
+            if (spriteNum == 1) {
+                spriteNum = 2;
+            }
+            else if (spriteNum == 2) {
+                 spriteNum = 1;
+            }
+            spriteCounter = 0;
+        }
     }
 
     public void draw(Graphics2D g2) {
         // g2 is like a pen
         BufferedImage bufferedImage = null;
+
         switch (direction) {
             case "up":
-                bufferedImage = up1;
+                if (spriteNum == 1) {
+                    bufferedImage = up1;
+                }
+                if (spriteNum == 2) {
+                    bufferedImage = up2;
+                }
                 break;
             case "down":
-                bufferedImage = down1;
+                if (spriteNum == 1) {
+                    bufferedImage = down1;
+                }
+                if (spriteNum == 2) {
+                    bufferedImage = down2;
+                }
                 break;
             case "left":
-                bufferedImage = left1;
+                if (spriteNum == 1) {
+                    bufferedImage = left1;
+                }
+                if (spriteNum == 2) {
+                    bufferedImage = left2;
+                }
                 break;
             case "right":
-                bufferedImage = right1;
+                if (spriteNum == 1) {
+                    bufferedImage = right1;
+                }
+                if (spriteNum == 2) {
+                    bufferedImage = right2;
+                }
                 break;
         }
         g2.drawImage(bufferedImage, x, y, gamePanel.tileSize, gamePanel.tileSize,null);
