@@ -17,8 +17,6 @@ public class Main {
 
         //    Make window fit with panel size
         window.pack();
-        window.setLocationRelativeTo(null);
-        window.setVisible(true);
         //   Place the window to screen center
         window.setLocationRelativeTo(null);
         //   Make screen visible
