@@ -2,9 +2,15 @@ package main;
 
 import javax.swing.*;
 
+
+/**
+ * main program
+ *
+ */
+
 public class Main {
     public static void main(String[] args) {
-        JFrame window = new JFrame();
+        JFrame window = new JFrame();   //game window
         //  close the window properly when click on X
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);

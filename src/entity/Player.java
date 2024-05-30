@@ -9,6 +9,9 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
+/**
+ *
+ */
 public class Player extends Entity{
     GamePanel gamePanel;
     KeyHandler keyHandler;
@@ -21,6 +24,9 @@ public class Player extends Entity{
         getImagePlayer();
     }
 
+    /**
+     * Set default stats (position, speed, direction) for player
+     */
     public void setDefaultValue() {
         x = 100;
         y = 100;
@@ -28,7 +34,9 @@ public class Player extends Entity{
         direction = "down";
     }
 
-
+    /**
+     * Read player images.
+     */
     public void getImagePlayer() {
         try {
             up1 = ImageIO.read(getClass().getResourceAsStream("/player/boy_up_1.png"));
@@ -45,7 +53,9 @@ public class Player extends Entity{
         }
     }
 
-
+    /**
+     * Update user position and direction based on keyboard events.
+     */
     public void update() {
         if (keyHandler.leftPressed) {
             direction = "left";
@@ -81,8 +91,11 @@ public class Player extends Entity{
         }
     }
 
+    /**
+     *
+     * @param g2, painting brush for player figure.
+     */
     public void draw(Graphics2D g2) {
-        // g2 is like a pen
         BufferedImage bufferedImage = null;
 
         switch (direction) {

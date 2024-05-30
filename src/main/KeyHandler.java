@@ -3,10 +3,11 @@ package main;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+
 public class KeyHandler implements KeyListener {
     //  To handle key input events
-
     public boolean upPressed, downPressed, leftPressed, rightPressed;
+
 
     @Override
     public void keyTyped(KeyEvent e) {
@@ -37,11 +38,14 @@ public class KeyHandler implements KeyListener {
         }
     }
 
+    /**
+     * Keyboard event handler, update evenHandler stats.
+     * @param e the keyboard event (player move) to be processed
+     */
     @Override
     public void keyReleased(KeyEvent e) {
-        // if keys released,
-        int code = e.getKeyCode();
-        // if W key is pressed
+        int code = e.getKeyCode();  //Read key from event
+
         if (code == KeyEvent.VK_W || code == KeyEvent.VK_UP) {
             upPressed = false;
         }
