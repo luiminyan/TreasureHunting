@@ -3,7 +3,6 @@ package entity;
 import main.GamePanel;
 import main.KeyHandler;
 
-import javax.imageio.IIOException;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -15,21 +14,27 @@ import java.io.IOException;
 public class Player extends Entity{
     GamePanel gamePanel;
     KeyHandler keyHandler;
+    public int screenX, screenY;
+
 
     public Player(GamePanel gamePanel, KeyHandler keyHandler) {
         this.gamePanel = gamePanel;
         this.keyHandler = keyHandler;
+
+        // make player in screen center
+        screenX = GamePanel.screenWidth / 2 - (GamePanel.tileSize / 2);
+        screenY = GamePanel.screenHeight / 2 - (GamePanel.tileSize / 2);
 
         setDefaultValue();
         getImagePlayer();
     }
 
     /**
-     * Set default stats (position, speed, direction) for player
+     * Set player starting position, speed and direction
      */
     public void setDefaultValue() {
-        x = 100;
-        y = 100;
+        worldX = GamePanel.tileSize * 23;
+        worldY = GamePanel.tileSize * 21;
         speed = 4;
         direction = "down";
     }
@@ -59,22 +64,22 @@ public class Player extends Entity{
     public void update() {
         if (keyHandler.leftPressed) {
             direction = "left";
-            x -= speed;
+            worldX -= speed;
             System.out.println("Player moved left!");
         }
         if (keyHandler.rightPressed) {
             direction = "right";
-            x += speed;
+            worldX += speed;
             System.out.println("Player moved right!");
         }
         if (keyHandler.upPressed) {
             direction = "up";
-            y -= speed;
+            worldY -= speed;
             System.out.println("Player moved upwards!");
         }
         if (keyHandler.downPressed) {
             direction = "down";
-            y += speed;
+            worldY += speed;
             System.out.println("Player moved downwards!");
         }
 
@@ -132,6 +137,6 @@ public class Player extends Entity{
                 }
                 break;
         }
-        g2.drawImage(bufferedImage, x, y, gamePanel.tileSize, gamePanel.tileSize,null);
+        g2.drawImage(bufferedImage, screenX, screenY, GamePanel.tileSize, GamePanel.tileSize,null);
     }
 }

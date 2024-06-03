@@ -22,12 +22,19 @@ public class GamePanel extends JPanel implements Runnable{
     public final static int screenWidth = tileSize * maxScreenCol;
     public final static int screenHeight = tileSize * maxScreenRow;
 
+    // World settings
+    public static final int maxWorldCol = 50;
+    public static final int maxWorldRow = 50;
+    public static final int maxWorldWidth = tileSize * maxScreenCol;
+    public static final int maxWorldHeight = tileSize * maxScreenRow;
+
+
     int FPS = 60;
 
     TileManager tileManager = new TileManager(this);    //Map drawer
     KeyHandler keyHandler = new KeyHandler();   // EventHandler
     Thread gameThread;  // Run the game with a thread, so it can be paused, continued. To repeat some process again and again
-    Player player = new Player(this, keyHandler);   // Add Player
+    public Player player = new Player(this, keyHandler);   // Add Player
 
 
     /**
@@ -102,7 +109,6 @@ public class GamePanel extends JPanel implements Runnable{
         tileManager.draw(g2);   //Draw map(s).
 
         player.draw(g2);    //Draw the player.
-
 
         g2.dispose();   // Save some memories, release resource
     }
